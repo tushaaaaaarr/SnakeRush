@@ -1,0 +1,52 @@
+{
+  "players": [
+    {
+      "name": "mastertushar",
+      "best_score": 160,
+      "date": "2026-02-03T18:58:41.349953",
+      "time_taken": 267
+    },
+    {
+      "name": "Alice Johnson",
+      "best_score": 150,
+      "date": "2026-02-03T15:30:45.123456",
+      "time_taken": 245
+    },
+    {
+      "name": "Bob Smith",
+      "best_score": 120,
+      "date": "2026-02-03T14:15:20.654321",
+      "time_taken": 198
+    },
+    {
+      "name": "kunal",
+      "best_score": 100,
+      "date": "2026-02-03T19:14:36.377463",
+      "time_taken": 51
+    },
+    {
+      "name": "Charlie Davis",
+      "best_score": 95,
+      "date": "2026-02-02T10:45:00.987654",
+      "time_taken": 156
+    },
+    {
+      "name": "Diana Wilson",
+      "best_score": 85,
+      "date": "2026-02-02T09:20:15.456789",
+      "time_taken": 142
+    },
+    {
+      "name": "Eve Martinez",
+      "best_score": 50,
+      "date": "2026-02-01T16:50:30.321654",
+      "time_taken": 89
+    },
+    {
+      "name": "qwerg",
+      "best_score": 40,
+      "date": "2026-02-03T19:40:29.072289",
+      "time_taken": 1355
+    }
+  ]
+}
