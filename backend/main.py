@@ -7,8 +7,8 @@ and leaderboard management.
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, Field
-from typing import List, Optional
+from pydantic import BaseModel
+from typing import List, Union
 from datetime import datetime
 import logging
 import os
@@ -27,7 +27,7 @@ app = FastAPI(
 )
 
 # Update initialization
-leaderboard_path = os.getenv("LEADERBOARD_PATH", "/var/data/leaderboard.json")
+leaderboard_path = os.getenv("LEADERBOARD_PATH", "leaderboard.json")
 leaderboard_manager = LeaderboardManager(leaderboard_path)
 
 # Configure CORS
@@ -58,7 +58,7 @@ class ScoreSubmissionResponse(BaseModel):
     """Response after submitting a score."""
     success: bool
     message: str
-    leaderboard_position: Optional[int] = None
+    leaderboard_position: Union[int, None] = None
     new_personal_best: bool = False
 
 
@@ -68,7 +68,7 @@ class PlayerLeaderboardEntry(BaseModel):
     best_score: int
     date: str
     time_taken: int = 0
-    rank: Optional[int] = None
+    rank: Union[int, None] = None
 
 
 class LeaderboardResponse(BaseModel):
@@ -80,11 +80,11 @@ class LeaderboardResponse(BaseModel):
 class PlayerBestScoreResponse(BaseModel):
     """Response with a player's best score."""
     found: bool
-    player_name: Optional[str] = None
-    best_score: Optional[int] = None
-    date: Optional[str] = None
-    time_taken: Optional[int] = None
-    rank: Optional[int] = None
+    player_name: Union[str, None] = None
+    best_score: Union[int, None] = None
+    date: Union[str, None] = None
+    time_taken: Union[int, None] = None
+    rank: Union[int, None] = None
 
 
 class GameSessionResponse(BaseModel):

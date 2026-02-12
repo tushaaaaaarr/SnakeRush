@@ -3,7 +3,5 @@ services:
     name: snakerush-backend
     runtime: python
     buildCommand: cd backend && pip install -r requirements.txt
-    startCommand: cd backend && gunicorn -w 1 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT main:app
-    envVars:
-      - key: LEADERBOARD_PATH
-        value: /var/data/leaderboard.json
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars: []
