@@ -11,6 +11,7 @@ from pydantic import BaseModel, Field
 from typing import List, Optional
 from datetime import datetime
 import logging
+import os
 
 from leaderboard import LeaderboardManager
 
@@ -25,8 +26,9 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Initialize leaderboard manager
-leaderboard_manager = LeaderboardManager("leaderboard.json")
+# Update initialization
+leaderboard_path = os.getenv("LEADERBOARD_PATH", "/var/data/leaderboard.json")
+leaderboard_manager = LeaderboardManager(leaderboard_path)
 
 # Configure CORS
 app.add_middleware(
