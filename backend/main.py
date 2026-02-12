@@ -77,16 +77,6 @@ class ScoreSubmissionResponse(BaseModel):
     message: str
     leaderboard_position: Optional[int] = None
     new_personal_best: bool = False
-    
-    class Config:
-        schema_extra = {
-            "example": {
-                "success": True,
-                "message": "Score submitted successfully",
-                "leaderboard_position": 5,
-                "new_personal_best": True
-            }
-        }
 
 
 class PlayerLeaderboardEntry(BaseModel):
@@ -94,46 +84,14 @@ class PlayerLeaderboardEntry(BaseModel):
     name: str
     best_score: int
     date: str
-    time_taken: int = 0  # Time in seconds
+    time_taken: int = 0
     rank: Optional[int] = None
-    
-    class Config:
-        schema_extra = {
-            "example": {
-                "name": "John Doe",
-                "best_score": 500,
-                "date": "2026-02-03T10:30:45.123456",
-                "time_taken": 120,
-                "rank": 1
-            }
-        }
 
 
 class LeaderboardResponse(BaseModel):
     """Response containing leaderboard entries."""
     entries: List[PlayerLeaderboardEntry]
     total_count: int
-    
-    class Config:
-        schema_extra = {
-            "example": {
-                "entries": [
-                    {
-                        "name": "Alice",
-                        "best_score": 1000,
-                        "date": "2026-02-03T10:30:45.123456",
-                        "rank": 1
-                    },
-                    {
-                        "name": "Bob",
-                        "best_score": 850,
-                        "date": "2026-02-02T15:20:30.654321",
-                        "rank": 2
-                    }
-                ],
-                "total_count": 2
-            }
-        }
 
 
 class PlayerBestScoreResponse(BaseModel):
@@ -144,18 +102,6 @@ class PlayerBestScoreResponse(BaseModel):
     date: Optional[str] = None
     time_taken: Optional[int] = None
     rank: Optional[int] = None
-    
-    class Config:
-        schema_extra = {
-            "example": {
-                "found": True,
-                "player_name": "John Doe",
-                "best_score": 500,
-                "date": "2026-02-03T10:30:45.123456",
-                "time_taken": 120,
-                "rank": 3
-            }
-        }
 
 
 class GameSessionResponse(BaseModel):
@@ -163,29 +109,12 @@ class GameSessionResponse(BaseModel):
     session_id: str
     player_name: str
     message: str
-    
-    class Config:
-        schema_extra = {
-            "example": {
-                "session_id": "session_123456",
-                "player_name": "John Doe",
-                "message": "Game session started"
-            }
-        }
 
 
 class HealthCheckResponse(BaseModel):
     """Health check response."""
     status: str
     timestamp: str
-    
-    class Config:
-        schema_extra = {
-            "example": {
-                "status": "healthy",
-                "timestamp": "2026-02-03T10:30:45.123456"
-            }
-        }
 
 
 # ==================== API Endpoints ====================
