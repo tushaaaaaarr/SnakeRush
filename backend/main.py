@@ -43,7 +43,7 @@ app.add_middleware(
 
 class GameSessionRequest(BaseModel):
     """Request to start a new game session."""
-    player_name: str = Field(..., min_length=1, max_length=50)
+    player_name: str
     
     class Config:
         schema_extra = {
@@ -55,10 +55,10 @@ class GameSessionRequest(BaseModel):
 
 class ScoreSubmissionRequest(BaseModel):
     """Request to submit a score."""
-    player_name: str = Field(..., min_length=1, max_length=50)
-    score: int = Field(..., ge=0)
-    difficulty_level: int = Field(default=1, ge=1, le=10)
-    time_taken: int = Field(default=0, ge=0)  # Time in seconds
+    player_name: str
+    score: int
+    difficulty_level: int = 1
+    time_taken: int = 0
     
     class Config:
         schema_extra = {
