@@ -42,7 +42,8 @@ function GamePanel({
       <div className="instructions">
         <div className="instructions-title">Instructions:</div>
         <ol className="instructions-list">
-          <li>Move with arrow keys/WASD/IJKl</li>
+          <li>Move with arrow keys/WASD/IJKl in desktop mode</li>
+          <li>Move with hand gestures in mobile mode</li>
           <li>Eat the orange squares</li>
           <li>Don't touch your tail</li>
           <li>Pause/Unpause with Space</li>
