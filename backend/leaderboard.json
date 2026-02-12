@@ -2,21 +2,9 @@
   "players": [
     {
       "name": "mastertushar",
-      "best_score": 160,
+      "best_score": 700,
       "date": "2026-02-03T18:58:41.349953",
-      "time_taken": 267
-    },
-    {
-      "name": "Alice Johnson",
-      "best_score": 150,
-      "date": "2026-02-03T15:30:45.123456",
       "time_taken": 245
-    },
-    {
-      "name": "Bob Smith",
-      "best_score": 120,
-      "date": "2026-02-03T14:15:20.654321",
-      "time_taken": 198
     },
     {
       "name": "Pragati",
